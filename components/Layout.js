@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
         />
       </Head>
       <Navbar />
+
       <main>{children}</main>
 
       {/* Css Scopped */}

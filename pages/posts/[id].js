@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Layout from '../../components/Layout';
+
 import Title from '../../components/Title';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
@@ -23,7 +23,7 @@ const Post = ({ post }) => {
   // }, []);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{`Post # ${post.id}`}</title>
         <meta
@@ -66,7 +66,7 @@ const Post = ({ post }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

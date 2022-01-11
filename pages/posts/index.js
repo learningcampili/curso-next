@@ -1,4 +1,3 @@
-import Layout from '../../components/Layout';
 import Title from '../../components/Title';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -21,7 +20,7 @@ const Posts = ({ posts }) => {
   // }, []);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Posts</title>
         <meta
@@ -77,7 +76,7 @@ const Posts = ({ posts }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import Layout from '../../components/Layout';
+
 import Title from '../../components/Title';
 import Head from 'next/head';
 const Users = ({ users }) => {
-  console.log(users);
   return (
-    <Layout>
+    <>
       <Head>
         <title>Users</title>
         <meta
@@ -65,7 +64,7 @@ const Users = ({ users }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../components/Layout';
+
 import Title from '../../components/Title';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -14,7 +14,7 @@ const User = ({ user }) => {
   }
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{`User # ${user.id}`}</title>
         <meta
@@ -72,7 +72,7 @@ const User = ({ user }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

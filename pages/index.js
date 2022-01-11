@@ -1,10 +1,9 @@
-import Layout from '../components/Layout';
 import Title from '../components/Title';
 import Head from 'next/head';
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Aprendiendo Next.js</title>
         <meta
@@ -32,7 +31,7 @@ const Home = () => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 
