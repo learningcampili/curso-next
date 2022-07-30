@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import Title from '../../components/Title';
 import Head from 'next/head';
+import Image from 'next/image';
 const Users = ({ users }) => {
   return (
     <>
@@ -18,9 +19,25 @@ const Users = ({ users }) => {
           return (
             <Link href={'/users/[id]'} as={`/users/${user.id}`} key={user.id}>
               <a className="card">
-                <h3>User</h3>
-                <p>Name: {user.name}</p>
-                <p>Email: {user.email}</p>
+                <div
+                  style={{
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    width: '50px',
+                    height: '50px',
+                  }}
+                >
+                  <Image
+                    src={`/images/${user.id}.jpg`}
+                    alt="foto"
+                    width={50}
+                    height={50}
+                    objectFit="cover"
+                    // layout="responsive"
+                  />
+                </div>
+                <p>{user.name}</p>
+                <p>{user.email}</p>
               </a>
             </Link>
           );
@@ -62,6 +79,9 @@ const Users = ({ users }) => {
             font-size: 1.25rem;
             line-height: 1.5;
           }
+          .rounded {
+            border-radius: 50%;
+          }
         `}
       </style>
     </>
@@ -74,6 +94,7 @@ export default Users;
 export const getStaticProps = async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
   const users = await response.json();
+
   return {
     props: {
       users,
